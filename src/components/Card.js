@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGameContext } from '../context/UserContext';
+import { useGameContext } from '../context/GameContext';
 
 const suitMap = {
   hearts: '❤️',

@@ -2,11 +2,11 @@ import './App.css';
 import Player from './components/Player';
 import CardList from './components/CardList';
 import ExecutePassButton from './components/ExecutePassButton';
-import { useGameContext } from './context/UserContext';
+import { useGameContext } from './context/GameContext';
 
 function App() {
   const { selectedCard, deck, playerOneHand, playerTwoHand, playerThreeHand } = useGameContext();
-
+  
   return (
     <div className="App">
       <section>
@@ -24,14 +24,14 @@ function App() {
           hand={playerThreeHand}
         />
         <CardList
+          player='deck'
           cards={deck}
-          player={'deck'}
         />
       </section>
       <section>
-        {selectedCard && (
-          <ExecutePassButton />
-        )}
+        {selectedCard &&
+        <ExecutePassButton />
+        }
       </section>
     </div>
   );
